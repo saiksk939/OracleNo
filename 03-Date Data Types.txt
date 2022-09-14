@@ -1,0 +1,53 @@
+Date Data Types:
+----------------
+* DATE 						* TIMESTAMP WITH LOCAL TIME ZONE
+* TIMESTAMP 				* INTERVAL YEAR TO MONTH 
+* TIMESTAMP WITH TIME ZONE 	* INTERVAL DAY TO SECOND
+
+DATE:
+-----
+	* Stores both date and time
+	* Year, month, day, hour, minute, second
+		When to use? If you want to store date and time 
+					but not fractional seconds or timezone
+					----------------------------------------
+					
+TIMESTAMP:
+----------
+	* Similar to DATE
+	* Store fractions of asecond to 9 places
+		When to use? If you need fractional seconds but not timezones
+					-------------------------------------------------
+					
+TIMESTAMP WITH TIME ZONE:
+-------------------------
+	* Similar to TIMESTAMP
+	* Stores timezone as well
+	* Hours and minutes as an offset to UTC
+		When to use? If you need to store timezones 
+					but does not need to be tailored to each user
+					----------------------------------------------
+					
+TIMESTAMP WITH LOCAL TIME ZONE:
+-------------------------------
+	* Stores timestamp and timezone
+	* Geta value in your local timezone
+		When to use? If timezones are important
+					and need to be tailored to each user
+					-------------------------------------
+
+INTERVAL YEAR TO MONTH:
+-----------------------
+	* Stores a period of time in years and months
+	* |In-built validation
+		When to use? If you need to store a period 
+					of time in years and months					
+					-------------------------------
+					
+INTERVAL DAY TO SECOND:
+-------------------------
+	* Stores a period of time from days to seconds
+	* In-built validation
+		When to use? If you need to store a period
+					of time in days to seconds
+					------------------------------

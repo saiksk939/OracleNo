@@ -17,6 +17,7 @@ New commands:
 	> recylebin
 	> flashback
 	> purge
+----------------------------------------------------------------------------------------
 
 1) create: To create a new object in database
    -------  Ex: tabel, synonym, view, sequence, index,...etc
@@ -38,10 +39,50 @@ Ex: create user usera identified by usera;
 How to view all tables in oracle db
 ------------------------------------
 syntax: select * from tab;
+----------------------------------------------------------------------------------------------------------
 
 2) alter: 
    ------
 	- To modify the structure of a table.
 	- it again four types
-a) alter - modify
+	
+a) alter - modify:
+--------------------
+	- To change datatype from one datatype to another datatypes and also change
+	   the size of datatype of a particular column.
+syntax: 
+---------
+alter table <tn> modify <column name> <new datatype>[new size]
+Ex:  alter table student modify sname varchar2(20);
+
+b) alter - add:
 ------------------
+	- To add a new column to an existing table.
+syntax:
+---------
+alter table <tn> add <new column name> <datatype>[size];
+Ex: alter table student add saddresses varchar2(10);
+
+c) alter - rename:
+----------------------
+	- To change a column name in a table.
+syntax:
+---------
+alter table <tn> rename <column> <old column name> to <new column name>;
+Ex:  alter table student rename column sname to studentnames;
+
+d) alter - drop:
+------------------
+	- To drop / delete a column from a table.
+syntax:
+----------
+alter table <tn> drop <column> <column name>;
+Ex: alter table student drop column sfee;
+--------------------------------------------------------------------------------------------
+
+3) rename:
+--------------
+	- To change a table name in database.
+syntax:
+---------
+rename <old table name> to <new table name>;

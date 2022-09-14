@@ -1,0 +1,58 @@
+Text Data Types
+----------------
+* CHAR 				   * NVARCHAR2
+* NCHAR 			   * LONG
+* VARCHAR			   * RAW
+* VARCHAR2 			   * LONG RAW
+
+CHAR:
+-----
+	* Fixed-length character data type
+	* Padded with spaces
+            When to use? Never
+						------
+							
+VARCHAR2:
+--------
+	* Variable-length character data type
+	* Not padded with spaces
+	* Called VARCHAR2 because VARCHAR is reserved for standard implementation
+			When to use? Most text values
+						------------------
+
+NCHAR:
+------
+	* Similar to CHAR
+	* Stores Unicode values (multi-byte)
+			When to use? Never
+						------
+
+NVARCHAR2:
+----------
+	* Similar to VARCHAR2
+	* Stores Unicode values (multi-byte)
+			When to use? If you need to store Unicode characters
+						------------------------------------------
+
+LONG:
+-----
+	* Stores up to 2GB of data
+	* Has been deprecated
+			When to use? Never, it's been deprecated
+						------------------------------
+
+RAW:
+----
+	* Stores variable-length strings
+	* No conversion when exporting
+			When to use? If you need to convert data between systems
+						---------------------------------------------
+
+LONG RAW:
+---------
+	* Large text values, similar to LONG
+	* No conversion when exporting
+	* Has been deprecated
+			When to use? Never, it has been deprecated
+						-------------------------------
+
