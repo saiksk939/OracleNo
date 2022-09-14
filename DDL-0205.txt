@@ -86,3 +86,31 @@ Ex: alter table student drop column sfee;
 syntax:
 ---------
 rename <old table name> to <new table name>;
+Ex:  rename student to sdetails
+Ex: rename sdetails to student 
+-----------------------------------------------------------------------------------------
+
+4) truncate:
+	- To delete  all rows from a table at a time.
+	- Cannor delete a specific row from a table.
+	- it does not suppots 'where' clause condition.
+	- it was deleted rows but not columns.
+	- it is permanent rows deleted.
+syntax:
+---------
+truncate table <table name>;
+Ex:   truncate table student;
+-------------------------------------------------------------------
+
+5) drop:
+----------
+	- To drop/delete a table(rows & columns) from database.
+syntax:
+---------
+drop table <table name>;
+Ex: drop table student;
+
+Note: Before oracle 10g enterprise edition once we drop a table then
+			it was permanent, but from oracle 10g enterprise edition once we 
+			drop a table it was temporary.
+		
