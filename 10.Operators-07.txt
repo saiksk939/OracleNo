@@ -1,0 +1,17 @@
+(OPERATORS)
+-------------------
+Operators:
+-------------
+	- is aa attribute which is used to perform some  operations such as 
+		'assignment, arithmetic, comparing, writing, some logical conditions......etc'.
+1) Assignment operator			==>	=
+2) Arithmetic operators			==>	+, -, *, /
+3) Relational operators			==>	<, >, <=, >=, !=, <>
+4) Logical operators				==> 	AND, OR, NOT
+5) Set operators						==>	Union, Union all, Intersect, Minus
+6) Special operations				==>	(+ve)						(-ve)
+																-------						------
+																In							Not In
+																Between					Not Between
+																Is null					Is Not null
+																

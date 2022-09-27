@@ -1,6 +1,6 @@
 							SQL
 							----
-1.Data Definition Language(DDL):
+1.DATA DEFINITION LANGUAGE(DDL):
 ---------------------------------
 	> create
 	> alter
@@ -17,7 +17,7 @@ New commands:
 	> recylebin
 	> flashback
 	> purge
-----------------------------------------------------------------------------------------
+=================================================================
 
 1) create: To create a new object in database
    -------  Ex: tabel, synonym, view, sequence, index,...etc
@@ -34,12 +34,15 @@ Ex:create table student(STid Int, SName char(10),Sfee Number(6,2));
 How to create user in database;
 -------------------------------
 Ex: create user usera identified by usera;
+	   <!--grant connect to usera;
+			  grant create table to usera;
+			  grant unlimited tablespace to usera;-->
 
 
 How to view all tables in oracle db
 ------------------------------------
 syntax: select * from tab;
-----------------------------------------------------------------------------------------------------------
+======================================================================
 
 2) alter: 
    ------
@@ -78,7 +81,7 @@ syntax:
 ----------
 alter table <tn> drop <column> <column name>;
 Ex: alter table student drop column sfee;
---------------------------------------------------------------------------------------------
+======================================================================
 
 3) rename:
 --------------
@@ -88,11 +91,11 @@ syntax:
 rename <old table name> to <new table name>;
 Ex:  rename student to sdetails
 Ex: rename sdetails to student 
------------------------------------------------------------------------------------------
+=====================================================================
 
 4) truncate:
 	- To delete  all rows from a table at a time.
-	- Cannor delete a specific row from a table.
+	- Cannot delete a specific row from a table.
 	- it does not suppots 'where' clause condition.
 	- it was deleted rows but not columns.
 	- it is permanent rows deleted.
@@ -100,11 +103,11 @@ syntax:
 ---------
 truncate table <table name>;
 Ex:   truncate table student;
--------------------------------------------------------------------
+=====================================================================
 
 5) drop:
 ----------
-	- To drop/delete a table(rows & columns) from database.
+	- To drop/delete an entire table (rows & columns) from database.
 syntax:
 ---------
 drop table <table name>;

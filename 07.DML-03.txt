@@ -1,0 +1,109 @@
+2) DATA MANIPULATION LANGUAGE (DML):
+-------------------------------------------------------------
+	i) insert
+	ii) update
+	iii) delete
+ 
+ New commands:
+ ---------------------
+	i) insert all
+	ii) merge
+
+i) insert:
+-----------
+	- To insert a new row data into a table.
+syntax 1:
+-----------
+insert into <tn> values(v1,v2,v3......);
+Ex: insert into student values(1, 'smith',1000);
+
+Note: no.of values and colums must be match.
+--------
+
+syntax 2:
+------------
+insert into <tn>(req.colum names)values(v1,v2....);
+Ex: insert into student(stid,sname,sfee)values(3,'Ram',1003);
+Ex: insert into student(stid,sname)values(4,'Bran');
+Ex: insert into student(stid)values(5);
+Ex: insert into student(sname,sfee,stid)values('Ravi',1003,6);
+
+How to insert mutiple rows into a table:
+---------------------------------------------------
+	- & : To insert values into colums dynamically.
+syntax 1:
+------------
+insert into <tn> values(&<colum name1>,&<colum name2>,.........);
+Ex:  insert into student values(&stid,'&sname',&sfee);
+		Enter value for stid: 5
+		Enter value for sname: Arvind
+		Enter value for sfee: 1005
+
+Ex: / (To re-execute the last executed query in sqlplus editor)
+		Enter value for stid: 6
+		Enter value for sname: Arun
+		Enter value for sfee: 1006
+
+syntax 2: 
+-----------
+insert into <tn> (req.colum names)values(&<col1>,&<col2,........>)
+Ex: insert into student(stid,sfee)values(&stid,&sfee);
+		Enter value for stid: 3
+		Enter value for sfee: 1003
+
+Ex: /
+		Enter value for stid: 4
+		Enter value for sfee: 1004
+
+How to insert NULLs into a table:
+--------------------------------------------
+Ex: insert into student values(null,null,null);
+Ex: insert into student(stid,sname,sfee)values(null,null,null);
+==================================================================
+
+ii) update:
+-------------
+	- To update all rows data in a table at a time.
+						(or)
+	- to update a specific row data in a table by using "where" condition.
+syntax:
+---------
+update <tn> set <colum name1>=<value1>, <colum name2>=<value2>,.....[where <condition>];
+Ex: update student set sfee=1200 where stid=1;
+Ex: update student set sfee=null where stid=1;
+Ex: update student set sname='smith', sfee=500 where stid=2;
+Ex: update student set sname=null, sfee=null where stid=2;
+Ex: update student set sname='adams';
+Ex: update student set sname=null;
+Ex: update student set sname='Jones' where sname is null;
+
+Note: 
+-------
+	- When we assign NULL to a column ----> we use  "=" operator
+	- When we compare NULL from a table ---> we use "is" operator
+===============================================================================
+
+iii) delete:
+-------------
+	- to delete all rows data from a table at a time
+							(or)
+	- to delete a specific row data from a table by using "where"condition
+syntax:
+----------
+delete from <tn> [where <conditon>];
+Ex: delete from student where stid=1;
+Ex: delete from student where sfee is null;
+Ex: delete from student;
+
+Delete vs Truncate:
+-------------------------
+		delete											|			truncate
+		---------										|			------------
+1. can delete a specific rows.			|	1. not possible.
+2. supports 'where' condition.		|	2. not support.
+3. It is temporary deletion.				|	3. permanent deleteion.
+4. can restore deleted rows(data)	|	4. not possible.
+	by using 'rollback' commad.		|
+5. can delete rows in one by one	|	5. delete all rows at a time.
+	manner.											|
+6. execution speed is slow.				|	6. fast.

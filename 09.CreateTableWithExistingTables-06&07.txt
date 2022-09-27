@@ -1,0 +1,83 @@
+(Creating Tables with Existing Tables data) & (DML New commands) & (ALIAS)
+-------------------------------------------------------		----------------------------		----------
+
+How to create a new table from an existing table(old table):
+---------------------------------------------------------------------------
+syntax 1: created a new table with copy of all rows & columns from the old table: 
+------------------------------------------------------------------------------------------------------
+create table <new table> as select * from <old table name>
+Ex: create table newdept as select * from dept;
+
+syntax 2: created a new table with only columns:
+--------------------------------------------------------------
+create table <new table name> as select * from <old table name> where <false condition>;
+Ex:  create table deptcol as select * from dept where 3=6;
+
+syntax 3: created a new table with specific rows:
+-------------------------------------------------------------
+create table <new table name> as select * from <old table name> where <condition>;
+Ex: create table emproows as select * from emp where deptno=20;
+
+syntax 4: created a new table with specific columns:
+-------------------------------------------------------------
+create table <new table name> as select  <old table columns names>from <old table name>;
+Ex: create table empcols as select empno,ename,sal from emp;
+==============================================================================
+
+How to copy data from one table to another table:
+---------------------------------------------------------------
+syntax:
+---------
+insert into <destination table name> select * from <source table name>;
+Ex: insert into demp select * from semp; 
+(Rule:
+	1. no.of columns should be same in both tables.
+	2. order of columns and datatypes of columns must be match.)
+==============================================================================
+
+DML New commands:
+------------------------------
+i) insert all:
+---------------
+	- this command is used to inset rows into multiple tables at a time but
+		the rows must be an existing table rows only.
+		
+		{insert: to insert new data into a single table.
+		  insert all: to  insert an existing table rows into multiple tables.}
+syntax:
+---------
+inset all into <tn1> values(<col1>,<col2>,........)> 
+into <tn2> values(<col1>,<col2>,.........)
+into <tn3> values(<col1>,<col2>,.........)
+.........................................................................
+into <tn N> values(<col1>,<col2>,........)
+select * from <old table name>;
+(First created three empty tables with existing table columns)
+table1: create table test1 as select * from dept where 1=0;
+table2: create table test2 as select * from dept where 1=0;
+table3: create table test3 as select * from dept where 1=0; 
+
+Ex: insert all into test1 values(deptno,dname,loc)
+  2  into test2 values(deptno,dname,loc)
+  3  into test3 values(deptno,dname,loc)
+  4  select * from dept;
+==============================================================================
+
+ALIAS NAMES:
+-------------------
+	- it is a temporary names creating for columns & table.
+i) Column level alias name:
+----------------------------------
+	- created alias name for columns.
+
+ii) table level alias name:
+-------------------------------
+	- created alias name for table name.
+
+syntax:
+---------
+select <col name1> <col alias name1>,
+<col name2> <col alias name>,...........
+from <tn> <table alias name>;
+Ex: select deptno x, dname y, loc z from dept d;
+

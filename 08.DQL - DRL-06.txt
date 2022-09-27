@@ -1,0 +1,64 @@
+3) DQL /DRL:
+-------------------
+i) select:
+-----------
+	- to retrive data from a table with complete rows (or) a specific row by
+		using 'where' condition.
+syntax:
+---------
+select * from <tn>;  -> Here , " * "  ---- all columns.
+Ex: select * from dept;
+			(or)
+Ex: select deptno,dname,loc from dept;
+Ex: select * from emp where comm is null;
+=================================================================
+
+CONCATENATION  OPERATOR( || ):
+-------------------------------------------------
+	- to add two strings expressions.
+Syntax:
+---------
+<string1>||<string2>
+Ex: select 'Mr.'||ename||' '||'is working as a'||' '||job from emp;
+=================================================================
+
+DISTINCT KEY:
+--------------------
+	- to eliminate duplicate values from a column.
+syntax:
+---------
+distinct <column name>
+Ex: select distinct job from emp;
+Ex: select distinct deptno from emp order by deptno;
+===================================================================
+
+Note:
+	- When we want to display a big data tables in proper systematicall order 
+	   in sqlplus editor then we set the following two properties are
+
+1) pagesize n:
+-----------------
+	- to display no.of rows in a page.
+	- by default a page is having 14 rows.
+	- Max limit is 50000 rows.
+syntax:
+---------
+set pagesize n; --> Here "n" ----no.of rows
+Ex: set pagesize 100;
+===================================================================
+
+2) lines n:
+------------
+	- by default each  line will occupied 80 bytes.
+	- is used to print no.of char's in no.of bytes.
+	- Max limit is 32767 bytes.
+	line1:. .. .  . . . . . . .  . .  .(1 char=1byte))
+
+100 rows:
+	each row no.of chars: 100 char'select
+	. . . . . . . . . . . . .  . . . . . . . . . . . . (80b/c)
+	. . . . . . . . . . (20)
+syntax:
+---------
+set lines n; --> Here 'n '  ----no.of bytes
+Ex: set lines 160;

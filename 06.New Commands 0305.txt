@@ -1,0 +1,62 @@
+New features in oracle 10g
+----------------------------------
+1) recyclebin
+2) flashback
+3) purge
+
+1)recyclebin:
+----------------
+	- It is pre-defined table
+	- storing information about dropped tables
+	
+To view the structure of recyclebin:
+----------------------------------------------
+syntax:
+----------
+desc recyclebin;
+
+To view dropped tables information in recyclebin:
+----------------------------------------------------------------
+syntax:
+----------
+select object_name, original_name from recyclebin;
+
+OBJECT_NAME													 ORIGINAL_NAME
+---------------------------------------------------			---------------------------
+BIN$NL5m7ixzR4+DT0plyv6bOQ==$0 	 	STUDENT
+=======================================================
+
+2) flashback:
+-----------------
+	- This command is used to restore dropped table from recyclebin to 
+		oracle db.
+syntax:
+---------
+flashback table <table name> to before drop;
+Ex: flashback table student to before drop;
+============================================================
+
+3) purge:
+-----------
+	- This command is used to delete/drop a table permanently.
+
+To delete a specific table permanently from recyclebin;
+----------------------------------------------------------------------
+syntax:
+---------
+purge table <table name>;
+Ex: purge table test1;
+
+To delete all tables from recyclebin permanently;
+---------------------------------------------------------------
+syntax:
+---------
+purge recyclebin;
+
+To delete a table from database permanently:
+---------------------------------------------------------
+syntax:
+---------
+drop table <table name> purge;
+Ex: drop  table test1 purge;
+
