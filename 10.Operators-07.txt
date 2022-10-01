@@ -14,4 +14,128 @@ Operators:
 																In							Not In
 																Between					Not Between
 																Is null					Is Not null
+																Like						Not Like
+
+1) Assignment operator:
+-------------------------------
+	- to assign a value to variable / attribute.
+syntax:
+--------
+<col name> <assignment operator> <value>
+Ex: select * from emp where empno=7788;
+Ex: update emp set sal=50000 where job='clerk';
+Ex: delete from emp where deptno=10;
+===================================================================================
+
+2) Arithmetic operator:
+------------------------------
+	- to perform add, sub, mul, division.
+syntax:
+---------
+<col name> <arithmetic operator> <value>
+Ex: to display employees after adding 1000
+ 	select sal old_sal, sal+1000 new_sal from emp;
+
+Ex: to display empno, ename, basic salary and annual salary of employees
+	   who are working under deptno=10;
+	select empno,ename, sal basic_sal,saL*12 annual_sal, deptno
+ 2	from emp where deptno=10;
+
+Ex: to display employees salaries after increment of 10%
+	select empno,ename, sal beforeincre,
+  2  sal+sal*10/100 afterincre from emp;
+				(OR)
+Ex: select empno,ename, sal beforeincre,
+  2  sal+sal*0.1 afterincre from emp;
+==================================================================================
+
+3) Relational operator:
+----------------------------
+	- comparing a specific column values with user defind condition in the query.
+syntax:
+---------
+where <col name> <relatioanal operator> <value>;
+Ex: to display employees from emp table whose salary is more than 1500
+	select * from where sal>1500;
+
+Ex: to display employees who are joined before 1981
+	select * from emp where hiredate<'01-jan-81';
 																
+Ex: to display employees who are joined after 1981
+	select * from emp where hiredate>'31-dec-81';
+=====================================================================
+
+4) Logical operator:
+--------------------------
+	-to check more than one condition in the query.
+syntax:
+---------
+where <conditon1> <logical operator> <conditon2>..........;
+Ex: to display employee whose name is 'smith' and working under the job is 'clerk'
+
+AND:
+------
+	- it return a value if both conditions are true.
+cond1			cond2
+-------			--------
+t 					t 			==> t
+t 					f 			==> f
+f 					t   		==> f
+f 					f 			==> f
+syntax:
+---------
+where <cond1> and <cond2>.....;
+Ex: select * from emp where ename='smith' and job='clerk'; 
+
+OR:
+-----
+	- it return a value if any one condition is true from the given group of conditons in the query.
+cond1			cond2
+-------			--------
+t 					t 			==> t
+t 					f 			==> t
+f 					t   		==> t
+f 					f 			==> f
+syntax:
+--------
+where <cond1> or <cond2>......;
+Ex: to display employees who are working under deptno=20 or whose salary is more than 1000
+	select * from emp where deptno=20 or sal>1000;
+
+NOT:
+------
+	- it returns values execpt the given condition values in the query.
+syntax:
+---------
+where not <cond1> and not <cond2> and ........;
+Ex: to display employees who are not working as 'salesman' and 'manager'
+	select * from emp where not job='salesman'and not job='manager';
+=============================================================================================
+
+5) Set operator:
+-------------------
+	- are used to combined the results of two select statements as a single set of values.
+syntax:
+--------
+<select query1> <set operator> <select query2> 
+
+	a={10,20,30} b={30,40,50}
+i) union: to combined two sets values without duplicates.
+-----------
+	a U b = {10,20,30,40,50}
+
+ii) union all: to combined two sets values with duplicates.
+---------------
+	a UL b = {10,20,30,30,40,50}
+
+iii) intersect: returns common values.
+----------------
+	a I b = {30}
+
+iv) minus: returns uncommon values from left side set only.
+-------------
+	a - b = {10,20}
+	b - a = {40,50}
+
+Ex:    									Nareshit
+				emp_hyd										emp_chennai
