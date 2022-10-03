@@ -109,7 +109,7 @@ syntax:
 ---------
 where not <cond1> and not <cond2> and ........;
 Ex: to display employees who are not working as 'salesman' and 'manager'
-	select * from emp where not job='salesman'and not job='manager';
+	select * from emp where not job='salesman' and not job='manager';
 =============================================================================================
 
 5) Set operator:
@@ -139,3 +139,19 @@ iv) minus: returns uncommon values from left side set only.
 
 Ex:    									Nareshit
 				emp_hyd										emp_chennai
+
+Q) to display  all employees who are working in nareshit organization?
+Ex: select * from emp_hyd union all select * from emp_chennai;
+											(OR)
+Ex: select * from emp_hyd union select * from emp_chennai;
+
+Q) to display employees who are working in both branches?
+Ex: select * from emp_hyd intersect select * from emp_chennai;
+
+Q) to display employees names who are working in HYD brand but not in CHENNAI branch?
+Ex: select ename from emp_hyd minus select ename from emp_chennai;
+
+RULES OF SET OPERATORS:
+--------------------------------------
+	- no.of columns in both select statements should be same.
+	- order and datatypes of columns in both queries must match.
