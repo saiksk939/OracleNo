@@ -1,7 +1,7 @@
 							SQL
 							----
 1.DATA DEFINITION LANGUAGE(DDL):
----------------------------------
+----------------------------------------------------
 	> create
 	> alter
 		> alter - modify
@@ -13,26 +13,27 @@
 	> drop
 
 New commands:
--------------
+--------------------
 	> recylebin
 	> flashback
 	> purge
 =================================================================
 
 1) create: To create a new object in database
-   -------  Ex: tabel, synonym, view, sequence, index,...etc
+   ---------  
+  Ex: tabel, synonym, view, sequence, index,...etc
 
 
 How to create a new table in oracle
-------------------------------------
+---------------------------------------------
 syntax:
--------
+---------
 create table <tn>(<column name1> <datatype>[size], (<column name> <datatype>[size],.........); ==>upto 1000 columns we be created in a single table
 Ex:create table student(STid Int, SName char(10),Sfee Number(6,2));
 
 
 How to create user in database;
--------------------------------
+----------------------------------------
 Ex: create user usera identified by usera;
 	   <!--grant connect to usera;
 			  grant create table to usera;
@@ -40,12 +41,12 @@ Ex: create user usera identified by usera;
 
 
 How to view all tables in oracle db
-------------------------------------
+-------------------------------------------
 syntax: select * from tab;
 ======================================================================
 
 2) alter: 
-   ------
+   --------
 	- To modify the structure of a table.
 	- it again four types
 	

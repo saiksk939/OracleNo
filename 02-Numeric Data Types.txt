@@ -7,67 +7,67 @@ Numeric
 * PLS_INTEGER
 
 NUMBER:
--------
+-------------
 	* Fixed and decimal numbers
 	* Positive, negative, up to 38 digits
 		When to use? Most cases when you need to store a number
-					--------------------------------------------
+								-----------------------------------------------------------
 					
 BINARY FLOAT:
--------------
+---------------------
 	* Stores floating point numbers
 	* Similar to float in other languages
 		When to use? If performance is important or accuracy is not important
-					----------------------------------------------------------
+								--------------------------------------------------------------------------
 					
 BINARY DOUBLE:
---------------
+-----------------------
 	* Stores double numbers
 	* Similar to double in other languages
 	* 64-bits (BINARY FLOAT is 32-bit)
 		When to use? If performance is important, or accuracy is not important
-					-----------------------------------------------------------
+								--------------------------------------------------------------------------
 					
 BOOLEAN:
---------
+--------------
 	* PL/SQL only (not for tables)
 	* Stores true or false
 		When to use? If you use PL/SQL and need to store true/false
-					------------------------------------------------
+								-------------------------------------------------------------
 					
 PLS_INTEGER:
-------------
+-------------------
 	* PL/SQL only (not for tables)
 	* Store whole numbers
 	* Faster than NUMBER
 		When to use? In PL/SQL for whole numbers
-					-----------------------------
+								----------------------------------------
 					
 BINARY INTEGER:
----------------
+------------------------
 	* Similar to PLS_INTEGER
 	* Older
 		When to use? Never, it's older and slower than PLS_INTEGER
-					-----------------------------------------------
+								---------------------------------------------------------------
 					
 INTEGER:
---------
+-------------
 	* SQLstandard
 	* Same as NUMBER(38) in Oracle
 		When to use? Never, just use NUMBER
-					------------------------
+								----------------------------------
 					
 FLOAT:
-------
+---------
 	* SQLstandard
 	* Maps to NUMBER
 		When to use? Never, just use NUMBER
-					------------------------
+								----------------------------------
 					
 DECIMAL:
---------
+-------------
 	* SQLstandard
 	* Maps to NUMBER
 		When to use? Never, just use NUMBER
-					------------------------
+								----------------------------------
 	

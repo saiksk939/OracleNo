@@ -1,52 +1,52 @@
 Other Data Types:
----------------
+-----------------------
 * BFILE 	* NCLOB
 * BLOB 		* ROWID
 * CLOB 		* UROWID
 
 BFILE:
-------
+---------
 	* Refer to files on the server outside the database
 	* Up to 4GB
 		When to use? To refer to files outside of the database
-					------------------------------------------
+								---------------------------------------------------
 					
 BLOB:
------
+-------
 	* Binary Large Object
 	* Unstructured binary objects (e.g. images)
 	* Up to 4GB
 		When to use? If you want to store files in your database
-					---------------------------------------------
+								------------------------------------------------------
 					
 CLOB:
------
+--------
 	* Character Large Object
 	* Up to 4GB
 	* Newer version of LONG
 		When to use? If you want to store large text 
-					that does not fit into VARCHAR2
-					---------------------------------
+								that does not fit into VARCHAR2
+								-------------------------------------------
 					
 NCLOB:
-------
+----------
 	* Store multi-byte characters
 	* Similar to CLOB
 	* Up to 4GB
 		When to use? If you need to store large
-					amounts of Unicode text
-					----------------------------
+								amounts of Unicode text
+								---------------------------------
 					
 ROWID:
-------
+----------
 	* Store an address of arow in adatabase
 	* Shouldn't use it for foreign keys
 		When to use? To store a row's ID for later reference
-					----------------------------------------
+								--------------------------------------------------
 					
 UROWID:
--------
+------------
 	* Stores ROWID values from non-Oracle databases
 		When to use? If you need to store row IDs
-					from other databases
-					------------------------------
+								from other databases
+								------------------------------
