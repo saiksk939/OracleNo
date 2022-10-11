@@ -1,0 +1,29 @@
+(FUNCTIONS)
+
+FUNCTIONS:
+-----------------
+	- it performs some task and must return a value
+		1. Pre-defined functions
+		2. User-defined functions
+1. Pre-defined functions:
+-------------------------------
+	- single row functions(scalar functions)
+	- multiple row functions(grouping functions)
+
+-single row functions:
+---------------------------
+	- these functions are returns a single value.
+		i) mathematical functions
+		ii) string functions
+		iii) date functions
+		iv) conversion functions
+		v) analytical functions
+
+How to call a function:
+----------------------------
+syntax:
+---------
+select <fname>(value) from dual;
+
+What is Dual?
+-----------------

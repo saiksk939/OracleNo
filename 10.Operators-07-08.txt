@@ -168,7 +168,7 @@ where <col name> in(value1,value2.....);
 
 Q) to display employees whose empno is 7369, 7566, 7788, 7900?
 Ex: select * from emp where empno in(7369,7566,7788,7900);
-========================================================================================
+
 
 BETWEEN:
 --------------
@@ -177,7 +177,7 @@ syntax:
 --------
 where <col name> between <select range1 > and <select range2>
 Ex: select * from emp where sal between 800 and 1500;
-=====================================================================================
+
 
 IS NULL:
 -----------
@@ -186,9 +186,68 @@ syntax:
 ---------
 where <col name> is null;
 Ex: select * from emp where comm is null;
-===========================================================================================
+
 
 LIKE:
 -------
 	- comparing a specific string character patterns.
-Ex: select * from emp where ename 
+	- when we work with like operator we should use the following two 'wildcard operators' ate
+	1) % : the remaining char's after selected char. in the string.
+	ii) _ : counting a single char.
+syntax:
+---------
+where <col name> like '<wildcard oper> <char> <wildcard opera>';
+
+Q) to display employees whose name starts with 's'?
+Ex: select * from emp where ename like 's%';
+
+Q) to display employees whose name ends with 'n'?
+Ex: select * from emp where ename like '%n';
+
+Q) to display employees whose name starts with 'm' and ends with 'n'?
+Ex: select * from emp where ename like 'm%n';
+
+Q) to display employees whose name is having 'i' character?
+Ex: select * from emp where ename like '%i%';
+
+Q) to display employees whose name is contain 2nd character is O ?
+Ex: select * from emp where ename like '_o%';
+
+Q) to display employees whose name is having 4 characters ?
+Ex: select * from emp where ename like '____';
+
+Q) to find out employees whose empno starts with 7 and ends with 8?
+Ex: select * from emp where empno like '7%8';
+
+Q) to find out employees who are joined in 1981?
+Ex: select * from emp where hiredate like '%81';
+
+Q) to find out employees who are joined in month of 'dec'?
+Ex: select * from emp where hiredate like '%DEC%';
+
+Q) to find out employees who are joined in 'apr' or 'dec'?
+Ex: select * from emp where hiredate like '%APR%' or hiredate like '%DEC%';
+
+LIKE OPERATOR WITH SPECIAL CHAR'S:
+--------------------------------------------------------
+Q) to retrive customer whose name is having '@' ?
+Ex: select * from customer where cname like '%@%';
+
+Q) to retrive customer whose name is having '#' ?
+Ex: select * from customer where cname like '%#%';
+
+Q) to retrive customer whose name is having '_' ?
+Ex: select * from customer where cname like '%_%'; ==> Wrong Result
+
+	Note: by default oracle server will treat ' _ , %' as a wild card operator but not as a special char's.
+	------	So to avoid this problem we use a pre-defined statement is called as "escape ' \' ".
+
+Ex: select * from customer where cname like '%\_%'escape'\';
+
+Q) to retrieve customer whose name is having '%' ?
+Ex: select * from customer where cname like '%\%%'escape'\';
+
+NOT LIKE:
+--------------
+Q) to display employees whose name not starts with 's' ?
+Ex: select * from customer where cname not like 'S%';
