@@ -1,0 +1,184 @@
+(FUNCTIONS)
+
+FUNCTIONS:
+-----------------
+	- it performs some task and must return a value
+		1. Pre-defined functions
+		2. User-defined functions
+1. Pre-defined functions:
+-------------------------------
+	- single row functions(scalar functions)
+	- multiple row functions(grouping functions)
+
+-single row functions:
+---------------------------
+	- these functions are returns a single value.
+		i) mathematical functions
+		ii) string functions
+		iii) date functions
+		iv) conversion functions
+		v) analytical functions
+
+How to call a function:
+----------------------------
+syntax:
+---------
+select <fname>(value) from dual;
+
+What is Dual?
+-----------------
+	- it is pre-defined / system defined table.
+	- used to test function functionalities.
+	- is called 'dummy table' in oracle.
+	- only one column & one row.
+
+Ex: desc dual;
+Ex: select * from dual;
+============================================================================================
+
+i) mathematical functions:
+---------------------------------
+a) ABS():
+-----------
+	- to convert (-ve) values into (+ve) values.
+Ex: select abs(-12) from dual;
+	abs(-12)
+	----------
+			12
+
+Ex: select empno,ename,sal,comm,abs(comm-sal) result from emp;
+
+
+b) power():
+--------------
+	- it returns the power of given expression.
+Ex: select power(2,3) from dual;
+	power(2,3)
+	-------------
+				8
+
+c) mod():
+-----------
+	- it returns remainder value.
+ Ex: select mod(10,2) from dual;
+	MOD(10,2)
+	--------------
+					0
+
+ 
+ d) ceil():
+----------
+	- it return a value which is equal (or) greater than the given expression.
+Ex: select ceil(9.0) from dual;
+	CEIL(9.0)
+	-------------
+				9
+
+
+Ex: select ceil(9.4) from dual;
+	CEIL(9.4)
+	-------------
+				10
+
+
+e) floor():
+------------
+	- it return a value which is equal (or) less than to the given expression.
+Ex: select floor(8.0) from dual;
+	FLOOR(8.0)
+	----------------
+					8
+
+Ex: select floor(8.5) from dual;
+	FLOOR(8.5)
+	---------------
+					8
+
+
+f) round():
+-------------	
+	- it returns the nearest value of given expression.
+	- consider 0.5 expression.
+		> value <0.5 ----> no adding value
+		> value <=0.5 ----> add 1 to expression.
+Ex: select round(12.32) from dual;
+ROUND(12.32)
+-------------------
+				12
+
+Ex: select round(12.52) from dual;
+ROUND(12.52)
+-------------------
+				13
+
+Ex: select round(12.842,2) from dual;
+ROUND(12.842,2)
+-------------------
+				12.84
+
+Ex: select round(12.848,2) from dual;
+ROUND(12.848,2)
+-------------------
+				12.85
+
+
+g) trunc():
+-------------
+	- it return an exact value from given expression.
+	- not consider 0.5 expression.
+Ex: select trunc(12.32) from dual;
+TRUNC(12.32)
+------------------
+					12
+
+Ex: select trunc(12.846,2) from dual;
+TRUNC(12.846,2)
+------------------
+					12.84
+======================================================================================
+ii) string functions:
+-------------------------
+a) length():
+--------------
+	- it returns length of given string.
+Ex: select length('Hello ') from dual;
+LENGTH('HELLO')
+-------------------------
+						6
+
+Ex: select ename, length(ename) from emp;
+Ex: select * from emp where length(ename)=6;
+
+
+ii) ltrim():
+------------
+	- to remove unwanted characters / spaces from a left side of string.
+Ex: select ltrim('  Hello') from dual;
+LTRIM
+---------
+Hello
+
+Ex: select ltrim('xxxHello','x') from dual;
+LTRIM
+---------
+Hello
+
+ii) rtrim():
+------------
+	- to remove unwanted characters / spaces from a right side of string.
+Ex: select ltrim(' Helloxxx','x') from dual;
+RTRIM
+----------
+Hello
+
+
+iv) trim():
+------------
+	- to remove unwanted char's / spaces from both sides of given string.
+syntax:
+---------
+trim('trimming char' from <string>)
+Ex: select trim('x' from 'xxxHelloxxx') from dual;
+TRIM
+-------
+Hello
